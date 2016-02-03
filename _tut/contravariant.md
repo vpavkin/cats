@@ -15,10 +15,10 @@ def contramap[A, B](f: B => A): F[A] => F[B]
 ```
 
 It looks like regular (also called `Covariant`) [`Functor`](functor.html)'s `map`,
-but with `f` transformation reversed.
+but with the `f` transformation reversed.
 
 Generally speaking, if you have some context `F[A]` for type `A`,
-and you can get `A` value out of `B` value — `Contravariant` allows you to get the `F[B]` context for `B`.
+and you can get an `A` value out of a `B` value — `Contravariant` allows you to get the `F[B]` context for `B`.
 
 Examples of `Contravariant` instances are [`Show`](show.html) and `scala.math.Ordering` (along with `algebra.Order`).
 
@@ -33,7 +33,7 @@ import cats.implicits._
 case class Money(amount: Int)
 case class Salary(size: Money)
 
-implicit val showMoney: Show[Money] = Show.show(m => s"${m.amount}$$")
+implicit val showMoney: Show[Money] = Show.show(m => s"$$${m.amount}")
 ```
 
 If we want to show a `Salary` instance, we can just convert it to a `Money` instance and show it instead.
@@ -42,10 +42,10 @@ Let's use `Show`'s `Contravariant`:
   
 ```scala
 scala> implicit val showSalary: Show[Salary] = showMoney.contramap(_.size)
-showSalary: cats.Show[Salary] = cats.Show$$anon$2@5612faa4
+showSalary: cats.Show[Salary] = cats.Show$$anon$2@64c42293
 
 scala> Salary(Money(1000)).show
-res2: String = 1000$
+res2: String = $1000
 ```
 
 ## Contravariant instance for scala.math.Ordering.
@@ -78,7 +78,7 @@ scala> // we need this for `<` to work
 import scala.math.Ordered._
 
 scala> implicit val moneyOrdering: Ordering[Money] = Ordering.by(_.amount)
-moneyOrdering: Ordering[Money] = scala.math.Ordering$$anon$9@60863257
+moneyOrdering: Ordering[Money] = scala.math.Ordering$$anon$9@3c1b830e
 
 scala> Money(100) < Money(200)
 res6: Boolean = true
