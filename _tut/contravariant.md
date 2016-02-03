@@ -42,7 +42,7 @@ Let's use `Show`'s `Contravariant`:
   
 ```scala
 scala> implicit val showSalary: Show[Salary] = showMoney.contramap(_.size)
-showSalary: cats.Show[Salary] = cats.Show$$anon$2@cc4f0b9
+showSalary: cats.Show[Salary] = cats.Show$$anon$2@5612faa4
 
 scala> Salary(Money(1000)).show
 res2: String = 1000$
@@ -78,7 +78,7 @@ scala> // we need this for `<` to work
 import scala.math.Ordered._
 
 scala> implicit val moneyOrdering: Ordering[Money] = Ordering.by(_.amount)
-moneyOrdering: Ordering[Money] = scala.math.Ordering$$anon$9@76141936
+moneyOrdering: Ordering[Money] = scala.math.Ordering$$anon$9@60863257
 
 scala> Money(100) < Money(200)
 res6: Boolean = true
