@@ -104,5 +104,5 @@ val timeLeft: Date = longToDate(1900918893l)
 
 ```scala
 scala> today |+| timeLeft
-res11: java.util.Date = Thu Dec 24 15:40:02 EST 2015
+res11: java.util.Date = Thu Dec 24 23:40:02 AST 2015
 ```
