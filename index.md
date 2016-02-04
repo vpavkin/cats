@@ -32,7 +32,7 @@ functionality, you can pick-and-choose from amongst these modules
  * `cats-core`: Core type classes and functionality (*required*).
  * `cats-laws`: Laws for testing type class instances.
 
-Release notes for Cats are available in [CHANGES.md](https://github.com/non/cats/blob/master/CHANGES.md).
+Release notes for Cats are available in [CHANGES.md](https://github.com/typelevel/cats/blob/master/CHANGES.md).
 
 <a name "motivations"></a>
 # Motivations

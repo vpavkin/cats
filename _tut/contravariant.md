@@ -2,7 +2,7 @@
 layout: default
 title:  "Contravariant"
 section: "typeclasses"
-source: "https://github.com/non/cats/blob/master/core/src/main/scala/cats/functor/Contravariant.scala"
+source: "core/src/main/scala/cats/functor/Contravariant.scala"
 scaladoc: "#cats.functor.Contravariant"
 ---
 # Contravariant
@@ -42,7 +42,7 @@ Let's use `Show`'s `Contravariant`:
   
 ```scala
 scala> implicit val showSalary: Show[Salary] = showMoney.contramap(_.size)
-showSalary: cats.Show[Salary] = cats.Show$$anon$2@64c42293
+showSalary: cats.Show[Salary] = cats.Show$$anon$2@77d4a5f5
 
 scala> Salary(Money(1000)).show
 res2: String = $1000
@@ -78,7 +78,7 @@ scala> // we need this for `<` to work
 import scala.math.Ordered._
 
 scala> implicit val moneyOrdering: Ordering[Money] = Ordering.by(_.amount)
-moneyOrdering: Ordering[Money] = scala.math.Ordering$$anon$9@3c1b830e
+moneyOrdering: Ordering[Money] = scala.math.Ordering$$anon$9@67cbfcf9
 
 scala> Money(100) < Money(200)
 res6: Boolean = true

@@ -2,7 +2,7 @@
 layout: default
 title:  "Foldable"
 section: "typeclasses"
-source: "https://github.com/non/cats/blob/master/core/src/main/scala/cats/Foldable.scala"
+source: "core/src/main/scala/cats/Foldable.scala"
 scaladoc: "#cats.Foldable"
 ---
 # Foldable
@@ -100,7 +100,7 @@ scala> Foldable[List].sequence_(List(Option(1), None))
 res20: Option[Unit] = None
 
 scala> val prints: Eval[Unit] = List(Eval.always(println(1)), Eval.always(println(2))).sequence_
-prints: cats.Eval[Unit] = cats.Eval$$anon$5@1782a8b7
+prints: cats.Eval[Unit] = cats.Eval$$anon$5@478166a3
 
 scala> prints.value
 1
@@ -113,7 +113,7 @@ scala> Foldable[List].dropWhile_(List[Int](1,2,4,5,6,7))(_ % 2 == 0)
 res23: List[Int] = List(1, 2, 4, 5, 6, 7)
 
 scala> val FoldableListOption = Foldable[List].compose[Option]
-FoldableListOption: cats.Foldable[[α]List[Option[α]]] = cats.Foldable$$anon$1@21a1073
+FoldableListOption: cats.Foldable[[α]List[Option[α]]] = cats.Foldable$$anon$1@5906525
 
 scala> FoldableListOption.fold(List(Option(1), Option(2), Option(3), Option(4)))
 res24: Int = 10

@@ -310,8 +310,9 @@ removes all elements that fulfill the predicate <code>f</code>.</p><div class="f
 removes all elements that fulfill the predicate <code>f</code>. Once an
 element is found which does not fulfill the predicate, that
 element and all subsequent elements will be returned.</p><p>If all elements satisfy <code>f</code>, an empty stream will be returned.
-If no elements satisfy <code>f</code>, the current stream will be returned.</p><p>For example:</p><p>  Streaming(1, 2, 3, 4, 5, 6, 7).takeWhile(n =&gt; n != 4)</p><p>Will result in: Streaming(4, 5, 6, 7)
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Streaming.html" class="extype" name="cats.data.Streaming">Streaming</a></dd></dl></div>
+If no elements satisfy <code>f</code>, the current stream will be returned.</p><p>For example:</p><pre>scala&gt; <span class="kw">val</span> s = Streaming(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>, <span class="num">6</span>, <span class="num">7</span>)
+scala&gt; s.dropWhile(n <span class="kw">=&gt;</span> n != <span class="num">4</span>).toList
+res0: <span class="std">List</span>[<span class="std">Int</span>] = <span class="std">List</span>(<span class="num">4</span>, <span class="num">5</span>, <span class="num">6</span>, <span class="num">7</span>)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Streaming.html" class="extype" name="cats.data.Streaming">Streaming</a></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -919,8 +920,9 @@ takes only those elements that fulfill the predicate <code>f</code>.</p><div cla
 takes only those elements that fulfill the predicate <code>f</code>. Once an
 element is found which does not fulfill the predicate, no further
 elements will be returned.</p><p>If all elements satisfy <code>f</code>, the current stream will be returned.
-If no elements satisfy <code>f</code>, an empty stream will be returned.</p><p>For example:</p><p>  Streaming(1, 2, 3, 4, 5, 6, 7).takeWhile(n =&gt; n != 4)</p><p>Will result in: Streaming(1, 2, 3)
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Streaming.html" class="extype" name="cats.data.Streaming">Streaming</a></dd></dl></div>
+If no elements satisfy <code>f</code>, an empty stream will be returned.</p><p>For example:</p><pre>scala&gt; <span class="kw">val</span> s = Streaming(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>, <span class="num">6</span>, <span class="num">7</span>)
+scala&gt; s.takeWhile(n <span class="kw">=&gt;</span> n != <span class="num">4</span>).toList
+res0: <span class="std">List</span>[<span class="std">Int</span>] = <span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Streaming.html" class="extype" name="cats.data.Streaming">Streaming</a></dd></dl></div>
     </li><li name="cats.data.Streaming#toArray" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toArray(implicitct:scala.reflect.ClassTag[A]):Array[A]"></a>
       <a id="toArray(ClassTag[A]):Array[A]"></a>
